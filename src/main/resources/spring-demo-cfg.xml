@@ -9,6 +9,11 @@
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
+    <!-- 需要在 <beans> 标签中增加对 jpa 命名空间的引用 -->
+    <jpa:repositories base-package="com.tn.jpa.repository"
+                      entity-manager-factory-ref="entityManagerFactory"
+                      transaction-manager-ref="transactionManager"/>
+
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
