@@ -26,9 +26,14 @@ public class JpaTest {
     @Test
     public void employTest(){
         Employee employee = new Employee();
-        employee.setFirstName("smint6");
-        employee.setLastName("weil6");
+        employee.setFirstName("smint5");
+        employee.setLastName("weil5");
         employeeRepository.save(employee);
+    }
+    @Test
+    public void queryTest(){
+        List<Employee> lm = employeeRepository.findByFirstNameStartingWithAndIdLessThan("smint5",5L);
+        System.out.println(lm.size());
     }
 
     @Test
@@ -60,6 +65,12 @@ public class JpaTest {
         for(Employee employee: le){
             System.out.println(employee.toString());
         }
+    }
+
+    @Test
+    public void customQuery(){
+        Employee employee = employeeRepository.getEmployeeMaxById();
+        System.out.println(employee.getFirstName());
     }
 
 }
