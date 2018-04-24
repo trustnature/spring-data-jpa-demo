@@ -1,6 +1,7 @@
 本项目用作 Spring-Data_-Jpa 研究使用。
 
 =========master branch: Spring 框架对 JPA 的支持=========
+-----------Spring JDBC Template 使用方式---------
 
 Spring 框架对 JPA 提供的支持主要体现在如下几个方面：
 首先，它使得 JPA 配置变得更加灵活。JPA 规范要求，配置文件必须命名为 persistence.xml，并存在于类路径下的 META-INF 目录中。
