@@ -39,6 +39,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     public List<Employee> queryParam2(String name);
 
     @Transactional
+    //事务一般添加在Service层上
     @Modifying
     @Query("update Employee a set a.description = :desp where a.id = :id")
     public void updateDesp(@Param("desp")String desp, @Param("id")Long id);
